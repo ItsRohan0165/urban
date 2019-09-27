@@ -45,18 +45,18 @@ async def on_message(message):
     #help command
     if message.content.startswith('/help'):
         msg = 'To use type !define followed by the word you wish to define.\nYou may also type !wotd for the word of the day'.format(message)
-        await client.send_message(message.channel, msg)
+        await channel.send( msg)
 
     #define command
     if message.content.startswith('/define'):
         word = message.content[7:]
         msg = define(word).format(message)
-        await client.send_message(message.channel, msg)
+        await channel.send( msg)
 
     #word of the day command
     if message.content.startswith('/wotd'):
         msg = word_of_the_day().format(message)
-        await client.send_message(message.channel, msg)
+        await channel.send( msg)
 
 
 @client.event
